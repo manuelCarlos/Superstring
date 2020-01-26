@@ -5,6 +5,8 @@
 //  Created by Manuel Lopes on 03.01.20.
 //
 
+import Foundation
+
 #if canImport(UIKit)
 import UIKit
 #endif
