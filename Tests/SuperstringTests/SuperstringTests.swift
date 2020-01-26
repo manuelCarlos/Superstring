@@ -1,4 +1,5 @@
 import XCTest
+
 @testable import Superstring
 
 final class SuperstringTests: XCTestCase {
@@ -6,7 +7,18 @@ final class SuperstringTests: XCTestCase {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct
         // results.
-        XCTAssertEqual(Superstring().text, "Hello, World!")
+        
+        let attributedString = NSAttributedString {
+            AString("Hello, ")
+                .font(.systemFont(ofSize: 24))
+                .foregroundColor(.red)
+                .backgroundColor(.brown)
+            AString("World!")
+                .font(.systemFont(ofSize: 20))
+                .foregroundColor(.darkGray)
+        }
+        
+        XCTAssertEqual(attributedString.string, "Hello, World!")
     }
 
     static var allTests = [
