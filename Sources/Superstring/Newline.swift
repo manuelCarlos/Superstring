@@ -22,6 +22,4 @@ extension NSAttributedString {
         // Used only to mitigate the compiler error: `initialiser is inaccessible due to 'internal' protection level`.
         public init() {}
     }
-    
-    
 }

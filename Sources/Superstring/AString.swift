@@ -12,36 +12,35 @@ import UIKit
 public typealias AString = NSAttributedString.AString
 
 extension NSAttributedString {
-
+    
     public struct AString: AttributedStringConvertible {
-
+        
         public let string: String
         public let attributes: Attributes
-
+        
         public init(_ string: String, attributes: Attributes = [:]) {
             self.string = string
             self.attributes = attributes
         }
-
+        
         public var attributedString: NSAttributedString {
             NSAttributedString(string: string, attributes: attributes)
         }
-
+        
         public func backgroundColor(_ color: Color) -> Self {
             apply([.backgroundColor: color])
         }
-
+        
         public func font(_ font: Font) -> Self {
             apply([.font: font])
         }
-
+        
         public func foregroundColor(_ color: Color) -> Self {
             apply([.foregroundColor: color])
         }
-
         
         // MARK: - Private
-
+        
         private func apply(_ newAttributes: Attributes) -> Self {
             var attributes = self.attributes
             // Merge the two dictionaries taking the value of the new attribute in case the key is duplicated.
@@ -55,21 +54,4 @@ extension NSAttributedString {
             // static func buildBlock(_ components: AttributedStringConvertible...) -> NSMutableAttributedString
         }
     }
-
-
-
-    public struct LineBreak: AttributedStringConvertible {
-        public func apply(_ newAttributes: [NSAttributedString.Key : Any]) -> Self {
-            return LineBreak()
-        }
-
-
-        public var attributedString: NSAttributedString {
-            NSAttributedString(string: "\n")
-        }
-
-            public init() { }
-        }
 }
-
-public typealias LineBreak = NSAttributedString.LineBreak

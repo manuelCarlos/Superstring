@@ -1,5 +1,5 @@
 # Superstring
 
-## Wip
+## (Wip)
 
-Use `@functionBuilders` to simplify the creation of `NSAttributedString` on iOS. 
+Using `@functionBuilders` to simplify the creation of `NSAttributedString` on iOS. 
