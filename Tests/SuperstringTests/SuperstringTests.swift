@@ -8,25 +8,34 @@ import UIKit
 
 final class SuperstringTests: XCTestCase {
     
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct
-        // results.
-        
-        let attributedString = NSAttributedString {
-            AString("Hello, ")
-                .font(.systemFont(ofSize: 24))
-                .foregroundColor(.red)
-                .backgroundColor(.brown)
-            AString("World!")
-                .font(.systemFont(ofSize: 20))
-                .foregroundColor(.darkGray)
+    func test_single_superstring_with_one_attribute() {
+        let expected = NSAttributedString(string: "Hello Superstring",
+                                          attributes: [.backgroundColor: Color.red])
+        let result = Superstring {
+            AString("Hello Superstring")
+                .backgroundColor(.red)
         }
         
-        XCTAssertEqual(attributedString.string, "Hello, World!")
+        XCTAssertTrue(result.attributedString.isEqual(expected))
     }
-
+    
+    func test_superstring_with_two_strings() {
+        let expected = NSMutableAttributedString(string: "Hello Superstring",
+                                                 attributes: [.backgroundColor: Color.red,
+                                                              .foregroundColor: Color.cyan])
+        expected.append(NSAttributedString(string: "I looked at clouds"))
+        let result = Superstring {
+            AString("Hello Superstring")
+                .backgroundColor(.red)
+                .foregroundColor(.cyan)
+            AString("I looked at clouds")
+        }
+        
+        XCTAssertTrue(result.attributedString.isEqual(expected))
+    }
+    
     static var allTests = [
-        ("testExample", testExample),
+        ("test_single_superstring_with_one_attribute", test_single_superstring_with_one_attribute),
+        ("test_superstring_with_two_strings", test_superstring_with_two_strings)
     ]
 }

@@ -2,6 +2,18 @@
 
 ## [Unreleased]
 
+### Added
+
+- `Superstring` type as main attributed string constructor.
+
+### Changed
+
+- `NSAttributedString` is no longer extended with a  `init(@NSAttributedStringBuilder _ builder: () -> NSAttributedString)` initialiser.
+
+### Fixed
+
+- Build error when trying to create an attributed string using a single  `AString` invocation.
+
 ## [0.0.1] - 27.01.20
 
 ### Added
