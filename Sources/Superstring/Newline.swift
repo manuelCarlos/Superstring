@@ -9,17 +9,12 @@
 import UIKit
 #endif
 
-public typealias Newline = NSAttributedString.Newline
-
-extension NSAttributedString {
+public struct Newline: AttributedStringConvertible {
     
-    public struct Newline: AttributedStringConvertible {
-        
-        public var attributedString: NSAttributedString {
-            NSAttributedString(string: "\n")
-        }
-        
-        // Used only to mitigate the compiler error: `initialiser is inaccessible due to 'internal' protection level`.
-        public init() {}
+    public var attributedString: NSAttributedString {
+        NSAttributedString(string: "\n")
     }
+    
+    // Used only to mitigate the compiler error: `initialiser is inaccessible due to 'internal' protection level`.
+    public init() {}
 }
