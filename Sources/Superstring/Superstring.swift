@@ -14,5 +14,5 @@ struct Superstring: AttributedStringConvertible {
     
     public init(@NSAttributedStringBuilder _ builder: () -> AttributedStringConvertible) {
         attributedString = builder().attributedString
-     }
+    }
 }

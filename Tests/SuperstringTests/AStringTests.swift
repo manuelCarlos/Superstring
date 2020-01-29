@@ -22,7 +22,7 @@ class AStringTests: XCTestCase {
         XCTAssertTrue(result.attributedString.isEqual(expected))
     }
     
-    func test_AString_with_background_color() {
+    func test_AString_with_red_background_color() {
         let expected = NSAttributedString(string: "Hello Superstring",
                                           attributes: [.backgroundColor: Color.red])
         let result = AString("Hello Superstring").backgroundColor(.red)
@@ -44,7 +44,7 @@ class AStringTests: XCTestCase {
     
     static var allTests = [
         ("test_AString", test_AString),
-        ("test_AString_with_background_color", test_AString_with_background_color),
+        ("test_AString_with_red_background_color", test_AString_with_red_background_color),
         ("test_String_with_multiple_attributes", test_String_with_multiple_attributes)
     ]
 }
