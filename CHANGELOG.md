@@ -2,6 +2,10 @@
 
 ## [Unreleased]
 
+### Added
+
+- Support for attributes in `Newline`.
+
 ## [0.0.2] - 29.01.20
 
 ### Added
