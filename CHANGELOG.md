@@ -26,5 +26,5 @@
 - `Superstring` basic swift package structure.
 
 [Unreleased]: https://github.com/manuelCarlos/Superstring/compare/v0.0.1...HEAD
-[0.0.2]: https://github.com/manuelCarlos/Superstring/compare/v0.0.1...v0.0.2
+[0.0.2]: https://github.com/manuelCarlos/Superstring/compare/0.0.1...0.0.2
 [0.0.1]: https://github.com/manuelCarlos/Superstring/releases/tag/0.0.1
