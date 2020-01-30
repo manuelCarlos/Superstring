@@ -1,5 +1,5 @@
 //
-//  NSAttributedStringBuilder.swift
+//  SuperstringBuilder.swift
 //  Superstring
 //
 //  Created by manuel on 28.01.20.
@@ -14,11 +14,10 @@ import UIKit
 // Set common types of UIFont and UIColor that can be used across UIKit and SwiftUI
 public typealias Font = UIFont
 public typealias Color = UIColor
-
 public typealias Attributes = [NSAttributedString.Key: Any]
 
 @_functionBuilder
-public struct NSAttributedStringBuilder {
+public struct SuperstringBuilder {
     
     public static func buildBlock(_ content: AttributedStringConvertible...) -> AttributedStringConvertible {
         let attributedString = NSMutableAttributedString()

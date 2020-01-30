@@ -12,7 +12,7 @@ struct Superstring: AttributedStringConvertible {
     
     let attributedString: NSAttributedString
     
-    public init(@NSAttributedStringBuilder _ builder: () -> AttributedStringConvertible) {
+    public init(@SuperstringBuilder _ builder: () -> AttributedStringConvertible) {
         attributedString = builder().attributedString
     }
 }

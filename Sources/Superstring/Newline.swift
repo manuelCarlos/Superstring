@@ -9,12 +9,28 @@
 import UIKit
 #endif
 
-public struct Newline: AttributedStringConvertible {
+public struct Newline: AttributedStringBuilder {
     
     public var attributedString: NSAttributedString {
-        NSAttributedString(string: "\n")
+        NSAttributedString(string: "\n", attributes: attributes)
     }
     
-    // Used only to mitigate the compiler error: `initialiser is inaccessible due to 'internal' protection level`.
-    public init() {}
+    public let attributes: Attributes
+    
+    /// Convenience NSAttributedString initialiser that accepts a closure of type `() -> AttributedStringConvertible`.
+    /// - Parameter builder: a closure of type `() -> AttributedStringConvertible`.
+    public init(@SuperstringBuilder _ builder: () -> AttributedStringConvertible) {
+        self.attributes = builder().attributedString.attributes(at: 0, effectiveRange: nil)
+    }
+    
+    public init(_ attributes: Attributes = [:]) {
+        self.attributes = attributes
+    }
+    
+    func apply(_ newAttributes: Attributes) -> Self {
+        var attributes = self.attributes
+        // Merge the two dictionaries taking the value of the new attribute in case the key is duplicated.
+        attributes.merge(newAttributes, uniquingKeysWith: { (_, new) in new } )
+        return Newline(attributes)
+    }
 }
