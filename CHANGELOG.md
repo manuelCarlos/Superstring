@@ -5,6 +5,11 @@
 ### Added
 
 - Support for attributes in `Newline`.
+- `AttributedStringBuilder` protocol with default implementations of basic attribute modifiers.
+
+### Changed
+
+- `AString` and `Newline` now conform to the `AttributedStringBuilder` protocol.
 
 ## [0.0.2] - 29.01.20
 

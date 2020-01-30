@@ -8,6 +8,15 @@ import UIKit
 
 final class SuperstringTests: XCTestCase {
     
+    func test_single_superstring() {
+        let expected = NSAttributedString(string: "Hello Superstring")
+        let result = Superstring {
+            AString("Hello Superstring")
+        }
+        
+        XCTAssertTrue(result.attributedString.isEqual(expected))
+    }
+    
     func test_single_superstring_with_one_attribute() {
         let expected = NSAttributedString(string: "Hello Superstring",
                                           attributes: [.backgroundColor: Color.red])
@@ -19,7 +28,7 @@ final class SuperstringTests: XCTestCase {
         XCTAssertTrue(result.attributedString.isEqual(expected))
     }
     
-    func test_superstring_with_two_strings() {
+    func test_superstring_with_two_AString() {
         let expected = NSMutableAttributedString(string: "Hello Superstring",
                                                  attributes: [.backgroundColor: Color.red,
                                                               .foregroundColor: Color.cyan])
@@ -34,7 +43,7 @@ final class SuperstringTests: XCTestCase {
         XCTAssertTrue(result.attributedString.isEqual(expected))
     }
     
-    func test_superstring_with_newline_and_two_strings() {
+    func test_superstring_with_newline_and_two_AStrings() {
         let expected = NSMutableAttributedString(string: "Hello Superstring",
                                                  attributes: [.backgroundColor: Color.red,
                                                               .foregroundColor: Color.cyan])
@@ -50,7 +59,7 @@ final class SuperstringTests: XCTestCase {
         XCTAssertTrue(result.attributedString.isEqual(expected))
     }
     
-    func test_superstring_ending_with_newline() {
+    func test_superstring_ending_with_Newline() {
         let expected = NSMutableAttributedString(string: "Hello Superstring", attributes: [.backgroundColor: Color.red])
         expected.append(NSAttributedString(string: "\n"))
         
@@ -63,7 +72,7 @@ final class SuperstringTests: XCTestCase {
         XCTAssertTrue(result.attributedString.isEqual(expected))
     }
     
-    func test_superstring_with_single_newline() {
+    func test_superstring_with_single_Newline() {
         let expected = NSAttributedString(string: "\n", attributes: [.font: UIFont.systemFont(ofSize: 72)])
         
         let result = Superstring {
@@ -76,9 +85,9 @@ final class SuperstringTests: XCTestCase {
     
     static var allTests = [
         ("test_single_superstring_with_one_attribute", test_single_superstring_with_one_attribute),
-        ("test_superstring_with_two_strings", test_superstring_with_two_strings),
-        ("test_superstring_with_newline_and_two_strings", test_superstring_with_newline_and_two_strings),
-        ("test_superstring_ending_with_newline", test_superstring_ending_with_newline),
-        ("test_superstring_with_single_newline", test_superstring_with_single_newline)
+        ("test_superstring_with_two_AString", test_superstring_with_two_AString),
+        ("test_superstring_with_newline_and_two_strings", test_superstring_with_newline_and_two_AStrings),
+        ("test_superstring_ending_with_newline", test_superstring_ending_with_Newline),
+        ("test_superstring_with_single_newline", test_superstring_with_single_Newline)
     ]
 }
