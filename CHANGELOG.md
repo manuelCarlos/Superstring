@@ -7,8 +7,6 @@
 ### Changed
 
 - Declare `Superstring` public. 
-- Declare `SuperstringBuilder` internal.
-
 
 ## [0.0.3] - 30.01.20
 
