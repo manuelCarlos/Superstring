@@ -7,21 +7,21 @@
 
 import Foundation
 
-protocol AttributedStringBuilder: AttributedStringConvertible {
+public protocol AttributedStringBuilder: AttributedStringConvertible {
     func apply(_ newAttributes: Attributes) -> Self
 }
 
-extension AttributedStringBuilder {
+public extension AttributedStringBuilder {
     
-    public func backgroundColor(_ color: Color) -> Self {
+    func backgroundColor(_ color: Color) -> Self {
         apply([.backgroundColor: color])
     }
     
-    public func font(_ font: Font) -> Self {
+    func font(_ font: Font) -> Self {
         apply([.font: font])
     }
     
-    public func foregroundColor(_ color: Color) -> Self {
+    func foregroundColor(_ color: Color) -> Self {
         apply([.foregroundColor: color])
     }
 }

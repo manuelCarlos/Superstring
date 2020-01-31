@@ -34,7 +34,7 @@ public struct AString: AttributedStringBuilder {
     
     // MARK: - Internal
     
-    func apply(_ newAttributes: Attributes) -> Self {
+   public func apply(_ newAttributes: Attributes) -> Self {
         var attributes = self.attributes
         // Merge the two dictionaries taking the value of the new attribute in case the key is duplicated.
         attributes.merge(newAttributes, uniquingKeysWith: { (_, new) in new } )

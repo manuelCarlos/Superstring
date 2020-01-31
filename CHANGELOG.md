@@ -7,6 +7,7 @@
 ### Changed
 
 - Declare `Superstring` public. 
+- Declare `AttributedStringBuilder` protocol and its extension public.
 
 ## [0.0.3] - 30.01.20
 
