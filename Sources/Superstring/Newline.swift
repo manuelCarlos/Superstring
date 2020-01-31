@@ -19,13 +19,15 @@ public struct Newline: AttributedStringBuilder {
     
     /// Convenience NSAttributedString initialiser that accepts a closure of type `() -> AttributedStringConvertible`.
     /// - Parameter builder: a closure of type `() -> AttributedStringConvertible`.
-    public init(@SuperstringBuilder _ builder: () -> AttributedStringConvertible) {
+    public init(@SuperstringBuilder _ builder: () -> Self) {
         self.attributes = builder().attributedString.attributes(at: 0, effectiveRange: nil)
     }
     
     public init(_ attributes: Attributes = [:]) {
         self.attributes = attributes
     }
+    
+    // MARK: - Internal
     
     func apply(_ newAttributes: Attributes) -> Self {
         var attributes = self.attributes

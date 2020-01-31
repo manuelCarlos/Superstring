@@ -17,9 +17,9 @@ public typealias Color = UIColor
 public typealias Attributes = [NSAttributedString.Key: Any]
 
 @_functionBuilder
-public struct SuperstringBuilder {
+struct SuperstringBuilder {
     
-    public static func buildBlock(_ content: AttributedStringConvertible...) -> AttributedStringConvertible {
+    static func buildBlock(_ content: AttributedStringConvertible...) -> AttributedStringConvertible {
         let attributedString = NSMutableAttributedString()
         content.forEach({ attributedString.append($0.attributedString) })
         return attributedString
