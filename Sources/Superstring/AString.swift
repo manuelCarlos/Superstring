@@ -22,7 +22,7 @@ public struct AString: AttributedStringBuilder {
     
     /// Convenience NSAttributedString initialiser that accepts a closure of type `() -> AttributedStringConvertible`.
     /// - Parameter builder: a closure of type `() -> AttributedStringConvertible`.
-    public init(@SuperstringBuilder _ builder: () -> AttributedStringConvertible) {
+    public init(@SuperstringBuilder _ builder: () -> Self) {
         self.string = ""
         self.attributes = builder().attributedString.attributes(at: 0, effectiveRange: nil)
     }
@@ -31,6 +31,8 @@ public struct AString: AttributedStringBuilder {
         self.string = string
         self.attributes = attributes
     }
+    
+    // MARK: - Internal
     
     func apply(_ newAttributes: Attributes) -> Self {
         var attributes = self.attributes

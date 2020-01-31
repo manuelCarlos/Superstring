@@ -8,9 +8,9 @@
 import UIKit
 #endif
 
-struct Superstring: AttributedStringConvertible {
+public struct Superstring: AttributedStringConvertible {
     
-    let attributedString: NSAttributedString
+    public let attributedString: NSAttributedString
     
     public init(@SuperstringBuilder _ builder: () -> AttributedStringConvertible) {
         attributedString = builder().attributedString
