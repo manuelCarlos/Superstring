@@ -13,18 +13,17 @@ import UIKit
 
 public struct AString: AttributedStringBuilder {
     
+    
+    public var components: (String, Attributes) {
+        (string, attributes)
+    }
+    
+    
     public let string: String
     public let attributes: Attributes
     
     public var attributedString: NSAttributedString {
         NSAttributedString(string: string, attributes: attributes)
-    }
-    
-    /// Convenience NSAttributedString initialiser that accepts a closure of type `() -> AttributedStringConvertible`.
-    /// - Parameter builder: a closure of type `() -> AttributedStringConvertible`.
-    public init(@SuperstringBuilder _ builder: () -> Self) {
-        self.string = ""
-        self.attributes = builder().attributedString.attributes(at: 0, effectiveRange: nil)
     }
     
     public init(_ string: String, attributes: Attributes = [:]) {

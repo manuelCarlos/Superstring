@@ -8,6 +8,7 @@
 import Foundation
 
 public protocol AttributedStringBuilder: AttributedStringConvertible {
+    var components: (String, Attributes) { get }
     func apply(_ newAttributes: Attributes) -> Self
 }
 

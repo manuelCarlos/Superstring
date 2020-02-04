@@ -19,14 +19,26 @@ public typealias Attributes = [NSAttributedString.Key: Any]
 @_functionBuilder
 public struct SuperstringBuilder {
     
-    public static func buildBlock(_ content: AttributedStringConvertible...) -> AttributedStringConvertible {
-        let attributedString = NSMutableAttributedString()
-        content.forEach({ attributedString.append($0.attributedString) })
-        return attributedString
+    public static func buildBlock(_ content: AttributedStringBuilder...) -> (AttributedStringConvertible, [(String, Attributes)] ){
+        let resultString = NSMutableAttributedString()
+        var components: [(String, Attributes)] = []
+        
+        content.forEach({
+            components.append($0.components)
+            resultString.append($0.attributedString)
+//            print("🐸", $0.attributedString)
+            print("🦋", $0.components)
+        })
+        
+        return (resultString, components)
     }
 }
 
 extension NSAttributedString: AttributedStringConvertible {
+    
+    public var components: [String : Attributes] {
+        [attributedString.string: attributes(at: 0, effectiveRange: nil)]
+    }
     
     // MARK: - AttributedStringConvertible
     
