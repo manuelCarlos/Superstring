@@ -9,5 +9,7 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+    - name: Build project
+      run:  swift package generate-xcodeproj      
     - name: Run tests
       run:  xcodebuild -scheme Superstring-Package test -destination "name=iPhone 8"
