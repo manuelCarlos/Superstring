@@ -15,22 +15,14 @@ import UIKit
 public typealias Font = UIFont
 public typealias Color = UIColor
 public typealias Attributes = [NSAttributedString.Key: Any]
+public typealias AttributedStringComponents = (string: String, attributes: Attributes)
 
 @_functionBuilder
 public struct SuperstringBuilder {
     
-    public static func buildBlock(_ content: AttributedStringConvertible...) -> AttributedStringConvertible {
-        let attributedString = NSMutableAttributedString()
-        content.forEach({ attributedString.append($0.attributedString) })
-        return attributedString
-    }
-}
-
-extension NSAttributedString: AttributedStringConvertible {
-    
-    // MARK: - AttributedStringConvertible
-    
-    public var attributedString: NSAttributedString {
-        self
+    public static func buildBlock(_ content: AttributedStringBuilder...) -> [AttributedStringComponents] {
+        var componentsList: [AttributedStringComponents] = []
+        content.forEach { componentsList.append($0.components) }
+        return componentsList
     }
 }

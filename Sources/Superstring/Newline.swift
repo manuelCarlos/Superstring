@@ -12,16 +12,14 @@ import UIKit
 public struct Newline: AttributedStringBuilder {
     
     public var attributedString: NSAttributedString {
-        NSAttributedString(string: "\n", attributes: attributes)
+        NSAttributedString(string: components.string, attributes: components.attributes)
     }
+    
+    public var components: AttributedStringComponents {
+          ("\n", attributes)
+      }
     
     public let attributes: Attributes
-    
-    /// Convenience NSAttributedString initialiser that accepts a closure of type `() -> AttributedStringConvertible`.
-    /// - Parameter builder: a closure of type `() -> AttributedStringConvertible`.
-    public init(@SuperstringBuilder _ builder: () -> Self) {
-        self.attributes = builder().attributedString.attributes(at: 0, effectiveRange: nil)
-    }
     
     public init(_ attributes: Attributes = [:]) {
         self.attributes = attributes
@@ -29,7 +27,7 @@ public struct Newline: AttributedStringBuilder {
     
     // MARK: - Internal
     
-   public func apply(_ newAttributes: Attributes) -> Self {
+    public func applying(_ newAttributes: Attributes) -> Self {
         var attributes = self.attributes
         // Merge the two dictionaries taking the value of the new attribute in case the key is duplicated.
         attributes.merge(newAttributes, uniquingKeysWith: { (_, new) in new } )

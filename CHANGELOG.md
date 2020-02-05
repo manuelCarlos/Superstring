@@ -2,6 +2,14 @@
 
 ## [Unreleased]
 
+## [0.1.0] - 05.02.20
+
+### Added
+
+- Support for base attributes on `Superstring`.
+-  `AttributedStringComponents:  (string: String, attributes: Attributes)` public type alias.
+- `var components: AttributedStringComponents` property to the `AttributedStringBuilder` protocol.
+
 ## [0.0.4] - 31.01.20
 
 ### Changed
@@ -44,6 +52,7 @@
 - `Superstring` basic swift package structure.
 
 [Unreleased]: https://github.com/manuelCarlos/Superstring/compare/v0.0.1...HEAD
+[0.1.0]: https://github.com/manuelCarlos/Superstring/compare/0.0.4...0.1.0
 [0.0.4]: https://github.com/manuelCarlos/Superstring/compare/0.0.3...0.0.4
 [0.0.3]: https://github.com/manuelCarlos/Superstring/compare/0.0.2...0.0.3
 [0.0.2]: https://github.com/manuelCarlos/Superstring/compare/0.0.1...0.0.2

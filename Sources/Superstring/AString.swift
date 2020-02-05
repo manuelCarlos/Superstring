@@ -13,19 +13,16 @@ import UIKit
 
 public struct AString: AttributedStringBuilder {
     
-    public let string: String
-    public let attributes: Attributes
+   public var components: AttributedStringComponents {
+        (string, attributes)
+    }
     
     public var attributedString: NSAttributedString {
-        NSAttributedString(string: string, attributes: attributes)
+        NSAttributedString(string: components.string, attributes: components.attributes)
     }
     
-    /// Convenience NSAttributedString initialiser that accepts a closure of type `() -> AttributedStringConvertible`.
-    /// - Parameter builder: a closure of type `() -> AttributedStringConvertible`.
-    public init(@SuperstringBuilder _ builder: () -> Self) {
-        self.string = ""
-        self.attributes = builder().attributedString.attributes(at: 0, effectiveRange: nil)
-    }
+    private let string: String
+    private let attributes: Attributes
     
     public init(_ string: String, attributes: Attributes = [:]) {
         self.string = string
@@ -34,7 +31,7 @@ public struct AString: AttributedStringBuilder {
     
     // MARK: - Internal
     
-   public func apply(_ newAttributes: Attributes) -> Self {
+   public func applying(_ newAttributes: Attributes) -> Self {
         var attributes = self.attributes
         // Merge the two dictionaries taking the value of the new attribute in case the key is duplicated.
         attributes.merge(newAttributes, uniquingKeysWith: { (_, new) in new } )

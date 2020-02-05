@@ -12,7 +12,22 @@ public struct Superstring: AttributedStringConvertible {
     
     public let attributedString: NSAttributedString
     
-    public init(@SuperstringBuilder _ builder: () -> AttributedStringConvertible) {
-        attributedString = builder().attributedString
+    public init(_ attributes: Attributes = [:], @SuperstringBuilder _ builder: () -> [AttributedStringComponents]) {
+        attributedString = Self.makeAttributedString(from: builder(), attributes: attributes)
+    }
+    
+    public init(_ attributes: Attributes = [:], @SuperstringBuilder _ builder: () -> AttributedStringBuilder) {
+        attributedString = Self.makeAttributedString(from: [builder().components], attributes: attributes)
+    }
+    
+    // MARK: - Private
+    
+    private static func makeAttributedString(from components: [AttributedStringComponents], attributes: Attributes) -> NSAttributedString {
+        let attributedString = NSMutableAttributedString()
+        components.forEach {
+            let resultingAttributes = $0.attributes.merging(attributes, uniquingKeysWith: { (current, _) in current } )
+            attributedString.append(NSAttributedString(string: $0.string, attributes: resultingAttributes))
+        }
+        return attributedString
     }
 }
