@@ -2,6 +2,8 @@
 
 ## [Unreleased]
 
+## [0.1.0] - 05.02.20
+
 ### Added
 
 - Support for base attributes on `Superstring`.
