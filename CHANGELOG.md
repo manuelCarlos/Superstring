@@ -2,6 +2,12 @@
 
 ## [Unreleased]
 
+### Added
+
+- Support for base attributes on `Superstring`.
+-  `AttributedStringComponents:  (string: String, attributes: Attributes)` public type alias.
+- `var components: AttributedStringComponents` property to the `AttributedStringBuilder` protocol.
+
 ## [0.0.4] - 31.01.20
 
 ### Changed
