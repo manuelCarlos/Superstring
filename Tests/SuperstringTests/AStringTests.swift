@@ -13,7 +13,7 @@ import UIKit
 
 @testable import Superstring
 
-class AStringTests: XCTestCase {
+final class AStringTests: XCTestCase {
 
     func test_AString() {
         let expected = NSAttributedString(string: "Superstring")

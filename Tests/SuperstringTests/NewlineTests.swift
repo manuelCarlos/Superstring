@@ -13,7 +13,7 @@ import UIKit
 
 @testable import Superstring
 
-class NewlineTests: XCTestCase {
+final class NewlineTests: XCTestCase {
 
     func test_Newline() {
         let expected = NSAttributedString(string: "\n")

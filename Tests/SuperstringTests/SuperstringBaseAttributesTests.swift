@@ -13,7 +13,7 @@ import UIKit
 
 @testable import Superstring
 
-class SuperstringBaseAttributesTests: XCTestCase {
+final class SuperstringBaseAttributesTests: XCTestCase {
 
     func test_super_string_with_one_base_attribute() {
         let expected = NSMutableAttributedString(string: "A beautiful ",
