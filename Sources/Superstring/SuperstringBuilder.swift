@@ -19,8 +19,8 @@ public typealias AttributedStringComponents = (string: String, attributes: Attri
 
 @_functionBuilder
 public struct SuperstringBuilder {
-    
-    public static func buildBlock(_ content: AttributedStringBuilder...) -> [AttributedStringComponents] {
+
+    public static func buildBlock(_ content: AttributedStringBuildable...) -> [AttributedStringComponents] {
         var componentsList: [AttributedStringComponents] = []
         content.forEach { componentsList.append($0.components) }
         return componentsList

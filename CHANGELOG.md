@@ -2,6 +2,19 @@
 
 ## [Unreleased]
 
+### Added
+
+- Documentation for the `AttributedStringBuildable` protocol and its requirements.
+
+### Changed
+
+- `AttributedStringBuilder` has been renamed to `AttributedStringBuildable`.
+- Applied `swiftlint autocorrect` with its default rules.
+
+### Removed
+
+- `AttributedStringConvertible` was removed.
+
 ## [0.1.0] - 05.02.20
 
 ### Added
