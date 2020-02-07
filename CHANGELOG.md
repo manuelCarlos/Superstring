@@ -2,6 +2,8 @@
 
 ## [Unreleased]
 
+## [0.2.0] - 07.02.20
+
 ### Added
 
 - Documentation for the `AttributedStringBuildable` protocol and its requirements.
