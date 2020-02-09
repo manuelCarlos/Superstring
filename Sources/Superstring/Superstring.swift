@@ -8,7 +8,7 @@
 import UIKit
 #endif
 
-public struct Superstring {
+public struct Superstring: Equatable, Hashable {
 
     public let attributedString: NSAttributedString
 

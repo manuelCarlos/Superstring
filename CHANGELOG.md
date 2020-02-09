@@ -2,6 +2,13 @@
 
 ## [Unreleased]
 
+### Added
+
+- `Equatable` conformance to `AString` and `Newline`.
+- `Equatable` and `Hashable`conformance to `Superstring`.
+- Extended `AttributedStringBuildable` with:
+  - `func paragraphStyle(_ paragraphStyle: NSParagraphStyle) -> Self`
+
 ## [0.2.0] - 07.02.20
 
 ### Added

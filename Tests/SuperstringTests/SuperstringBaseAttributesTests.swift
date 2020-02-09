@@ -32,7 +32,7 @@ final class SuperstringBaseAttributesTests: XCTestCase {
                 .backgroundColor(.cyan)
         }
 
-        XCTAssertTrue(result.attributedString.isEqual(expected))
+        XCTAssertEqual(expected, result.attributedString)
     }
 
     func test_super_string_base_attributes_override() {
@@ -51,7 +51,7 @@ final class SuperstringBaseAttributesTests: XCTestCase {
                 .backgroundColor(.cyan)
         }
 
-        XCTAssertTrue(result.attributedString.isEqual(expected))
+        XCTAssertEqual(expected, result.attributedString)
     }
 
     func test_super_string_base_attributes() {
@@ -68,7 +68,7 @@ final class SuperstringBaseAttributesTests: XCTestCase {
              AString("World")
          }
 
-         XCTAssertTrue(result.attributedString.isEqual(expected))
+         XCTAssertEqual(expected, result.attributedString)
      }
 
     func test_super_string_base_attributes_single_constructor() {
@@ -82,7 +82,7 @@ final class SuperstringBaseAttributesTests: XCTestCase {
              AString("A beautiful")
          }
 
-         XCTAssertTrue(result.attributedString.isEqual(expected))
+         XCTAssertEqual(expected, result.attributedString)
      }
 
     func test_super_string_base_attributes_for_AString_and_Newline() {
@@ -99,7 +99,7 @@ final class SuperstringBaseAttributesTests: XCTestCase {
             Newline()
         }
 
-        XCTAssertTrue(result.attributedString.isEqual(expected))
+        XCTAssertEqual(expected, result.attributedString)
     }
 
     func test_super_string_with_no_base_attributes() {
@@ -110,7 +110,7 @@ final class SuperstringBaseAttributesTests: XCTestCase {
                 .backgroundColor(.red)
         }
 
-        XCTAssertTrue(result.attributedString.isEqual(expected))
+        XCTAssertEqual(expected, result.attributedString)
     }
 
     func test_super_string_with_two_AString_and_no_base_attributes() {
@@ -125,7 +125,7 @@ final class SuperstringBaseAttributesTests: XCTestCase {
             AString("I looked at clouds")
         }
 
-        XCTAssertTrue(result.attributedString.isEqual(expected))
+        XCTAssertEqual(expected, result.attributedString)
     }
 
     func test_super_string_with_newline_and_two_AStrings_and_no_base_attributes() {
@@ -141,7 +141,7 @@ final class SuperstringBaseAttributesTests: XCTestCase {
             AString("I looked at clouds")
         }
 
-        XCTAssertTrue(result.attributedString.isEqual(expected))
+        XCTAssertEqual(expected, result.attributedString)
     }
 
     static var allTests = [
