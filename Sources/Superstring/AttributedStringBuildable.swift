@@ -51,10 +51,12 @@ extension AttributedStringBuildable {
     public func font(_ font: Font) -> Self {
         applying([.font: font])
     }
+
     @available(iOS 6.0, *)
     public func paragraphStyle(_ style: NSParagraphStyle) -> Self {
         applying([.paragraphStyle: style])
     }
+
     @available(iOS 6.0, *)
     public func foregroundColor(_ color: Color) -> Self {
         applying([.foregroundColor: color])
@@ -77,6 +79,11 @@ extension AttributedStringBuildable {
         applying([.kern: kern])
     }
 
+    /// The style of this attribute is an integer.
+    ///
+    /// The default value for this attribute is `styleNone`.
+    /// - Parameter style: This value indicates whether the text has a line through it and corresponds to one of the constants
+    /// described in `NSUnderlineStyle`.
     @available(iOS 6.0, *)
     public func strikethrough(_ style: NSUnderlineStyle) -> Self {
         return applying([.strikethroughStyle: style.rawValue])

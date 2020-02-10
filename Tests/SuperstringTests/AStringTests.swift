@@ -15,6 +15,7 @@ import UIKit
 
 final class AStringTests: XCTestCase {
 
+    
     func test_AString() {
         let expected = NSAttributedString(string: "Superstring")
         let result = AString("Superstring")
