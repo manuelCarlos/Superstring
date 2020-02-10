@@ -37,5 +37,5 @@ final class NewlineTests: XCTestCase {
         ("test_Newline", test_Newline),
         ("test_Newline_with_font_attribute", test_Newline_with_font_attribute)
     ]
-    
+
 }

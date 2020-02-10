@@ -49,5 +49,5 @@ final class AStringTests: XCTestCase {
         ("test_AString_with_red_background_color", test_AString_with_red_background_color),
         ("test_AString_with_multiple_attributes", test_AString_with_multiple_attributes)
     ]
-    
+
 }

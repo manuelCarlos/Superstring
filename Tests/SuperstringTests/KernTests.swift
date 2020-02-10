@@ -16,7 +16,7 @@ import UIKit
 final class KernTests: XCTestCase {
 
     // MARK: - Setup
-    
+
     private var expected: NSMutableAttributedString!
 
     override func setUp() {

@@ -16,7 +16,7 @@ import UIKit
 final class ParagraphStyleTests: XCTestCase {
 
     // MARK: - Tests
-    
+
     func test_paragraph_style() {
         let style = NSMutableParagraphStyle()
         style.lineSpacing = 3.0

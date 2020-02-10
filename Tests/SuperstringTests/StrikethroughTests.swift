@@ -16,7 +16,7 @@ import UIKit
 class StrikethroughTests: XCTestCase {
 
     // MARK: - Setup
-    
+
     private var expected: NSMutableAttributedString!
 
     override func setUp() {
@@ -30,7 +30,7 @@ class StrikethroughTests: XCTestCase {
     }
 
     // MARK: - Tests
-    
+
     func test_strikethrough_thick() {
         expected.addAttributes([.strikethroughColor: Color.red,
                                 .strikethroughStyle: NSUnderlineStyle.thick.rawValue],
@@ -71,5 +71,5 @@ class StrikethroughTests: XCTestCase {
         ("test_strikethrough_by_applying_value", test_strikethrough_by_applying_value),
         ("test_strikethrough_in_super_string", test_strikethrough_in_super_string)
     ]
-    
+
 }

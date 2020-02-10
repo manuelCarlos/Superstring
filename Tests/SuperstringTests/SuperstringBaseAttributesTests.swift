@@ -16,7 +16,7 @@ import UIKit
 final class SuperstringBaseAttributesTests: XCTestCase {
 
     // MARK: - Tests
-    
+
     func test_super_string_with_one_base_attribute() {
         let expected = NSMutableAttributedString(string: "A beautiful ",
                                                  attributes: [.backgroundColor: Color.red,
@@ -156,5 +156,5 @@ final class SuperstringBaseAttributesTests: XCTestCase {
         ("test_super_string_with_two_AString_and_no_base_attributes", test_super_string_with_two_AString_and_no_base_attributes),
         ("test_super_string_with_newline_and_two_AStrings_and_no_base_attributes", test_super_string_with_newline_and_two_AStrings_and_no_base_attributes)
     ]
-    
+
 }
