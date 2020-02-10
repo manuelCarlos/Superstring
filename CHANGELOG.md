@@ -4,6 +4,7 @@
 
 ### Added
 
+- `Ligature` public enum type.
 - `Equatable` conformance to `AString` and `Newline`.
 - `Equatable` and `Hashable`conformance to `Superstring`.
 - Extended `AttributedStringBuildable` with:
