@@ -134,7 +134,6 @@ extension AttributedStringBuildable {
         applying([.baselineOffset: offset])
     }
 
-
     @available(iOS 7.0, *)
      public func underline(color: Color) -> Self {
            return applying([.underlineColor: color])

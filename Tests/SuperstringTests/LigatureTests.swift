@@ -31,7 +31,6 @@ final class LigatureTests: XCTestCase {
         expected.addAttributes([.backgroundColor: Color.red,
                                 .ligature: 0], range: NSRange(0 ..< expected.length))
 
-
         let result = AString("A beautiful")
             .backgroundColor(.red)
             .ligature(.noLigatures)
@@ -61,7 +60,7 @@ final class LigatureTests: XCTestCase {
     func test_ligature_in_super_string() {
         expected.addAttributes([.backgroundColor: Color.red,
                                 .ligature: 1], range: NSRange(0 ..< expected.length))
-        
+
         let result = Superstring {
             AString("A beautiful")
                 .backgroundColor(.red)

@@ -30,7 +30,7 @@ class StrikethroughTests: XCTestCase {
     func test_strikethrough_thick() {
         expected.addAttributes([.strikethroughColor: Color.red,
                                 .strikethroughStyle: NSUnderlineStyle.thick.rawValue],
-                               range:  NSRange(0 ..< expected.length))
+                               range: NSRange(0 ..< expected.length))
 
         let result = AString("Super string!")
             .strikethrough(.thick)
@@ -41,7 +41,7 @@ class StrikethroughTests: XCTestCase {
 
     func test_strikethrough_by_applying_value() {
         expected.addAttributes([.strikethroughStyle: NSUnderlineStyle.thick.rawValue],
-                               range:  NSRange(0 ..< expected.length))
+                               range: NSRange(0 ..< expected.length))
 
         let result = AString("Super string!")
 
@@ -50,7 +50,8 @@ class StrikethroughTests: XCTestCase {
 
     func test_strikethrough_in_super_string() {
         expected.addAttributes([.backgroundColor: Color.red,
-                                .strikethroughStyle: NSUnderlineStyle.thick.rawValue], range:  NSRange(0 ..< expected.length))
+                                .strikethroughStyle: NSUnderlineStyle.thick.rawValue],
+                               range: NSRange(0 ..< expected.length))
 
         let result = Superstring {
             AString("Super string!")
