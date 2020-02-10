@@ -15,6 +15,8 @@ import UIKit
 
 class StrikethroughTests: XCTestCase {
 
+    // MARK: - Setup
+    
     private var expected: NSMutableAttributedString!
 
     override func setUp() {
@@ -27,14 +29,16 @@ class StrikethroughTests: XCTestCase {
         super.tearDown()
     }
 
+    // MARK: - Tests
+    
     func test_strikethrough_thick() {
         expected.addAttributes([.strikethroughColor: Color.red,
                                 .strikethroughStyle: NSUnderlineStyle.thick.rawValue],
                                range: NSRange(0 ..< expected.length))
 
         let result = AString("Super string!")
-            .strikethrough(.thick)
-            .strikethrough(color: .red)
+            .strikethroughStyle(.thick)
+            .strikethroughColor(.red)
 
         XCTAssertEqual(expected, result.attributedString)
     }
@@ -56,7 +60,7 @@ class StrikethroughTests: XCTestCase {
         let result = Superstring {
             AString("Super string!")
                 .backgroundColor(.red)
-                .strikethrough(.thick)
+                .strikethroughStyle(.thick)
         }
 
         XCTAssertEqual(expected, result.attributedString)
@@ -67,4 +71,5 @@ class StrikethroughTests: XCTestCase {
         ("test_strikethrough_by_applying_value", test_strikethrough_by_applying_value),
         ("test_strikethrough_in_super_string", test_strikethrough_in_super_string)
     ]
+    
 }

@@ -15,16 +15,18 @@ import UIKit
 
 final class ParagraphStyleTests: XCTestCase {
 
+    // MARK: - Tests
+    
     func test_paragraph_style() {
-        let paragraph = NSMutableParagraphStyle()
-        paragraph.lineSpacing = 3.0
+        let style = NSMutableParagraphStyle()
+        style.lineSpacing = 3.0
         let expected = NSAttributedString(string: "A beautiful",
                                           attributes: [.backgroundColor: Color.red,
-                                                       .paragraphStyle: paragraph])
+                                                       .paragraphStyle: style])
 
         let result = AString("A beautiful")
             .backgroundColor(.red)
-            .paragraphStyle(paragraph)
+            .paragraphStyle(style)
 
         XCTAssertEqual(expected, result.attributedString)
     }
@@ -43,16 +45,16 @@ final class ParagraphStyleTests: XCTestCase {
     }
 
     func test_paragraph_style_in_super_string() {
-        let paragraph = NSMutableParagraphStyle()
-        paragraph.lineSpacing = 3.0
+        let style = NSMutableParagraphStyle()
+        style.lineSpacing = 3.0
         let expected = NSAttributedString(string: "A beautiful",
                                           attributes: [.backgroundColor: Color.red,
-                                                       .paragraphStyle: paragraph])
+                                                       .paragraphStyle: style])
 
         let result = Superstring {
             AString("A beautiful")
                 .backgroundColor(.red)
-                .paragraphStyle(paragraph)
+                .paragraphStyle(style)
         }
 
         XCTAssertEqual(expected, result.attributedString)

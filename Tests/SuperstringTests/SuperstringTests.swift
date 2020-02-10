@@ -8,6 +8,8 @@ import UIKit
 
 final class SuperstringTests: XCTestCase {
 
+    // MARK: - Tests
+    
     func test_super_string() {
         let expected = NSAttributedString(string: "Hello Superstring")
         let result = Superstring {
@@ -91,4 +93,5 @@ final class SuperstringTests: XCTestCase {
         ("test_super_string_ending_with_Newline", test_super_string_ending_with_Newline),
         ("test_super_string_with_single_Newline", test_super_string_with_single_Newline)
     ]
+    
 }

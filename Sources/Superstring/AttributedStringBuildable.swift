@@ -31,11 +31,11 @@ public protocol AttributedStringBuildable {
 /// that corresponds to those characters.
 /// The default value for this attribute is 1. (Value 2 is unsupported on iOS).
 ///
-/// - noLigatures: the value 0 indicates no ligatures.
+/// - none: the value 0 indicates no ligatures.
 /// - default: this value indicates the use of the default ligatures.
 /// - all: this value indicates the use of all ligatures.
 public enum Ligature: Int {
-    case noLigatures = 0
+    case none = 0
     case `default`   = 1
 
     #if canImport(AppKit)
@@ -85,17 +85,17 @@ extension AttributedStringBuildable {
     /// - Parameter style: This value indicates whether the text has a line through it and corresponds to one of the constants
     /// described in `NSUnderlineStyle`.
     @available(iOS 6.0, *)
-    public func strikethrough(_ style: NSUnderlineStyle) -> Self {
+    public func strikethroughStyle(_ style: NSUnderlineStyle) -> Self {
         return applying([.strikethroughStyle: style.rawValue])
     }
 
     @available(iOS 6.0, *)
-    public func underline(style: NSUnderlineStyle) -> Self {
-          return applying([.underlineStyle: style.rawValue])
-      }
+    public func underlineStyle(_ style: NSUnderlineStyle) -> Self {
+        return applying([.underlineStyle: style.rawValue])
+    }
 
     @available(iOS 6.0, *)
-    public func stroke(color: Color) -> Self {
+    public func strokeColor(_ color: Color) -> Self {
         return applying([.strokeColor: color])
     }
 
@@ -103,7 +103,7 @@ extension AttributedStringBuildable {
     /// negative for stroke and fill (a typical value for outlined text would be 3.0)
     /// - Parameter width: CGFloat floating point value, in percent of font point size.
     @available(iOS 6.0, *)
-    public func stroke(width: CGFloat) -> Self {
+    public func strokeWidth(_ width: CGFloat) -> Self {
         return applying([.strokeWidth: width])
     }
 
@@ -119,8 +119,8 @@ extension AttributedStringBuildable {
 
     @available(iOS 7.0, *)
     public func textEffect(_ textEffect: NSAttributedString.TextEffectStyle) -> Self {
-         return applying([.textEffect: textEffect])
-     }
+        return applying([.textEffect: textEffect])
+    }
 
     // TODO: - TODO: NSTextAttachment and Link
     //    @available(iOS 7.0, *)
@@ -129,18 +129,18 @@ extension AttributedStringBuildable {
     //    @available(iOS 7.0, *)
     //    public static let link: NSAttributedString.Key // NSURL (preferred) or NSString
 
-     @available(iOS 7.0, *)
-    public func baseline(offset: CGFloat) -> Self {
+    @available(iOS 7.0, *)
+    public func baselineOffset(_ offset: CGFloat) -> Self {
         applying([.baselineOffset: offset])
     }
 
     @available(iOS 7.0, *)
-     public func underline(color: Color) -> Self {
-           return applying([.underlineColor: color])
-       }
+    public func underlineColor(_ color: Color) -> Self {
+        return applying([.underlineColor: color])
+    }
 
     @available(iOS 7.0, *)
-    public func strikethrough(color: Color) -> Self {
+    public func strikethroughColor(_ color: Color) -> Self {
         return applying([.strikethroughColor: color])
     }
 

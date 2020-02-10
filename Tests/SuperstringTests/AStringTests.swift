@@ -15,6 +15,8 @@ import UIKit
 
 final class AStringTests: XCTestCase {
 
+    // MARK: - Tests
+
     func test_AString() {
         let expected = NSAttributedString(string: "Superstring")
         let result = AString("Superstring")
@@ -47,4 +49,5 @@ final class AStringTests: XCTestCase {
         ("test_AString_with_red_background_color", test_AString_with_red_background_color),
         ("test_AString_with_multiple_attributes", test_AString_with_multiple_attributes)
     ]
+    
 }

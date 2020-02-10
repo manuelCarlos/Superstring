@@ -7,18 +7,18 @@
 - `Equatable` conformance to `AString` and `Newline`.
 - `Equatable` and `Hashable`conformance to `Superstring`.
 - Extended `AttributedStringBuildable` with:
-  - `func paragraphStyle(_ paragraphStyle: NSParagraphStyle) -> Self`
+  - `public func paragraphStyle(_ style: NSParagraphStyle) -> Self`
   - `public func ligature(_ ligature: Ligature) -> Self`
   - `public func kern(_ kern: CGFloat) -> Self `
   - `public func strikethrough(_ style: NSUnderlineStyle) -> Self`
-  - `public func strikethrough(color: Color) -> Self`
-  - `public func underline(style: NSUnderlineStyle) -> Self`
-  - `public func stroke(color: Color) -> Self`
-  - `public func stroke(width: CGFloat) -> Self`
+  - `public func strikethroughColor(_ color: Color) -> Self`
+  - `public func underline(_ style: NSUnderlineStyle) -> Self`
+  - `public func strokeColor(_ color: Color) -> Self`
+  - `public func strokeWidth(_ width: CGFloat) -> Self`
   - `public func shadow(x: CGFloat, y: CGFloat, blurRadius: CGFloat, color: Color?) -> Self`
   - `public func textEffect(_ textEffect: NSAttributedString.TextEffectStyle) -> Self`
-  - `public func baseline(offset: CGFloat) -> Self`
-  - `public func underline(color: Color) -> Self`
+  - `public func baselineOffset(_ offset: CGFloat) -> Self`
+  - `public func underlineColor(_ color: Color) -> Self`
   - `public func obliqueness(_ obliqueness: CGFloat) -> Self`
   - `public func expansion(_ expansion: CGFloat) -> Self`
 

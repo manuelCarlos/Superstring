@@ -15,6 +15,8 @@ import UIKit
 
 final class KernTests: XCTestCase {
 
+    // MARK: - Setup
+    
     private var expected: NSMutableAttributedString!
 
     override func setUp() {
@@ -26,6 +28,8 @@ final class KernTests: XCTestCase {
 
         super.tearDown()
     }
+
+    // MARK: - Tests
 
     func test_kern_zero() {
         expected.addAttributes([.backgroundColor: Color.red,

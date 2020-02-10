@@ -15,6 +15,8 @@ import UIKit
 
 final class LigatureTests: XCTestCase {
 
+    // MARK: - Setup
+
     private var expected: NSMutableAttributedString!
 
     override func setUp() {
@@ -27,13 +29,15 @@ final class LigatureTests: XCTestCase {
         super.tearDown()
     }
 
+    // MARK: - Tests
+
     func test_ligature_zero() {
         expected.addAttributes([.backgroundColor: Color.red,
                                 .ligature: 0], range: NSRange(0 ..< expected.length))
 
         let result = AString("A beautiful")
             .backgroundColor(.red)
-            .ligature(.noLigatures)
+            .ligature(.none)
 
         XCTAssertEqual(expected, result.attributedString)
     }
