@@ -15,11 +15,13 @@ import UIKit
 
 final class AStringTests: XCTestCase {
 
+    // MARK: - Tests
+
     func test_AString() {
         let expected = NSAttributedString(string: "Superstring")
         let result = AString("Superstring")
 
-        XCTAssertTrue(result.attributedString.isEqual(expected))
+        XCTAssertEqual(expected, result.attributedString)
     }
 
     func test_AString_with_red_background_color() {
@@ -27,7 +29,7 @@ final class AStringTests: XCTestCase {
                                           attributes: [.backgroundColor: Color.red])
         let result = AString("Hello Superstring").backgroundColor(.red)
 
-        XCTAssertTrue(result.attributedString.isEqual(expected))
+        XCTAssertEqual(expected, result.attributedString)
     }
 
     func test_AString_with_multiple_attributes() {
@@ -39,7 +41,7 @@ final class AStringTests: XCTestCase {
             .backgroundColor(.red)
             .foregroundColor(.cyan)
 
-        XCTAssertTrue(result.attributedString.isEqual(expected))
+        XCTAssertEqual(expected, result.attributedString)
     }
 
     static var allTests = [
@@ -47,4 +49,5 @@ final class AStringTests: XCTestCase {
         ("test_AString_with_red_background_color", test_AString_with_red_background_color),
         ("test_AString_with_multiple_attributes", test_AString_with_multiple_attributes)
     ]
+
 }

@@ -8,13 +8,15 @@ import UIKit
 
 final class SuperstringTests: XCTestCase {
 
+    // MARK: - Tests
+
     func test_super_string() {
         let expected = NSAttributedString(string: "Hello Superstring")
         let result = Superstring {
             AString("Hello Superstring")
         }
 
-        XCTAssertTrue(result.attributedString.isEqual(expected))
+        XCTAssertEqual(expected, result.attributedString)
     }
 
     func test_super_string_with_one_attribute() {
@@ -25,7 +27,7 @@ final class SuperstringTests: XCTestCase {
                 .backgroundColor(.red)
         }
 
-        XCTAssertTrue(result.attributedString.isEqual(expected))
+        XCTAssertEqual(expected, result.attributedString)
     }
 
     func test_super_string_with_two_AString() {
@@ -40,7 +42,7 @@ final class SuperstringTests: XCTestCase {
             AString("I looked at clouds")
         }
 
-        XCTAssertTrue(result.attributedString.isEqual(expected))
+        XCTAssertEqual(expected, result.attributedString)
     }
 
     func test_super_string_with_newline_and_two_AStrings() {
@@ -56,7 +58,7 @@ final class SuperstringTests: XCTestCase {
             AString("I looked at clouds")
         }
 
-        XCTAssertTrue(result.attributedString.isEqual(expected))
+        XCTAssertEqual(expected, result.attributedString)
     }
 
     func test_super_string_ending_with_Newline() {
@@ -69,7 +71,7 @@ final class SuperstringTests: XCTestCase {
             Newline()
         }
 
-        XCTAssertTrue(result.attributedString.isEqual(expected))
+        XCTAssertEqual(expected, result.attributedString)
     }
 
     func test_super_string_with_single_Newline() {
@@ -80,7 +82,7 @@ final class SuperstringTests: XCTestCase {
             .font(UIFont.systemFont(ofSize: 72))
         }
 
-        XCTAssertTrue(result.attributedString.isEqual(expected))
+        XCTAssertEqual(expected, result.attributedString)
     }
 
     static var allTests = [
@@ -91,4 +93,5 @@ final class SuperstringTests: XCTestCase {
         ("test_super_string_ending_with_Newline", test_super_string_ending_with_Newline),
         ("test_super_string_with_single_Newline", test_super_string_with_single_Newline)
     ]
+
 }

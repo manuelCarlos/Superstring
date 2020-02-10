@@ -2,6 +2,27 @@
 
 ## [Unreleased]
 
+### Added
+
+- `Ligature` public enum type.
+- `Equatable` conformance to `AString` and `Newline`.
+- `Equatable` and `Hashable`conformance to `Superstring`.
+- Extended `AttributedStringBuildable` with:
+  - `public func paragraphStyle(_ style: NSParagraphStyle) -> Self`
+  - `public func ligature(_ ligature: Ligature) -> Self`
+  - `public func kern(_ kern: CGFloat) -> Self `
+  - `public func strikethrough(_ style: NSUnderlineStyle) -> Self`
+  - `public func strikethroughColor(_ color: Color) -> Self`
+  - `public func underline(_ style: NSUnderlineStyle) -> Self`
+  - `public func strokeColor(_ color: Color) -> Self`
+  - `public func strokeWidth(_ width: CGFloat) -> Self`
+  - `public func shadow(x: CGFloat, y: CGFloat, blurRadius: CGFloat, color: Color?) -> Self`
+  - `public func textEffect(_ textEffect: NSAttributedString.TextEffectStyle) -> Self`
+  - `public func baselineOffset(_ offset: CGFloat) -> Self`
+  - `public func underlineColor(_ color: Color) -> Self`
+  - `public func obliqueness(_ obliqueness: CGFloat) -> Self`
+  - `public func expansion(_ expansion: CGFloat) -> Self`
+
 ## [0.2.0] - 07.02.20
 
 ### Added

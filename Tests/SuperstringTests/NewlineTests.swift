@@ -15,11 +15,13 @@ import UIKit
 
 final class NewlineTests: XCTestCase {
 
+    // MARK: - Tests
+
     func test_Newline() {
         let expected = NSAttributedString(string: "\n")
         let result = Newline()
 
-        XCTAssertTrue(result.attributedString.isEqual(expected))
+        XCTAssertEqual(expected, result.attributedString)
     }
 
     func test_Newline_with_font_attribute() {
@@ -28,11 +30,12 @@ final class NewlineTests: XCTestCase {
         let result = Newline()
             .font(UIFont.systemFont(ofSize: 72))
 
-        XCTAssertTrue(result.attributedString.isEqual(expected))
+        XCTAssertEqual(expected, result.attributedString)
     }
 
     static var allTests = [
         ("test_Newline", test_Newline),
         ("test_Newline_with_font_attribute", test_Newline_with_font_attribute)
     ]
+
 }
