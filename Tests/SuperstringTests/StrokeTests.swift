@@ -27,7 +27,7 @@ final class StrokeTests: XCTestCase {
 
     // MARK: - Tests
 
-    func test_stroke_style_color() {
+    func test_stroke_width_color() {
         expected.addAttributes([.backgroundColor: Color.red,
                                 .strokeWidth: 10,
                                 .strokeColor: Color.red], range: NSRange(0 ..< expected.length))
@@ -62,7 +62,7 @@ final class StrokeTests: XCTestCase {
     }
 
     static var allTests = [
-        ("test_stroke_style_color", test_stroke_style_color),
+        ("test_stroke_width_color", test_stroke_width_color),
         ("test_stroke_by_applying_value", test_stroke_by_applying_value),
         ("test_stroke_in_super_string", test_stroke_in_super_string)
     ]
