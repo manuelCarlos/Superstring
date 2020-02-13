@@ -2,6 +2,11 @@
 
 ## [Unreleased]
 
+### Added
+
+- Extended `AttributedStringBuildable` with:
+  - `public func writingDirection(_ writingDirection: NSWritingDirection) -> Self`
+
 ## [0.3.0] - 10.02.20
 
 ### Added

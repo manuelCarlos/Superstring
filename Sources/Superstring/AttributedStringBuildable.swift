@@ -134,4 +134,9 @@ extension AttributedStringBuildable {
     public func expansion(_ expansion: CGFloat) -> Self {
         applying([.expansion: expansion])
     }
+
+    @available(iOS 7.0, *)
+    public func writingDirection(_ writingDirection: NSWritingDirection) -> Self {
+        return applying([.writingDirection: writingDirection.rawValue])
+    }
 }
