@@ -94,7 +94,7 @@
 - This CHANGELOG file.
 - `Superstring` basic swift package structure.
 
-[Unreleased]: https://github.com/manuelCarlos/Superstring/compare/v0.3.0...HEAD
+[Unreleased]: https://github.com/manuelCarlos/Superstring/compare/v0.3.0...main
 [0.3.0]: https://github.com/manuelCarlos/Superstring/compare/0.2.0...0.3.0
 [0.2.0]: https://github.com/manuelCarlos/Superstring/compare/0.1.0...0.2.0
 [0.1.0]: https://github.com/manuelCarlos/Superstring/compare/0.0.4...0.1.0
