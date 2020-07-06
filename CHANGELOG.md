@@ -6,6 +6,7 @@
 
 - Extended `AttributedStringBuildable` with:
   - `public func writingDirection(_ writingDirection: NSWritingDirection) -> Self`
+- Update swift-tools-version to 5.2 in Package.swift.
 
 ## [0.3.0] - 10.02.20
 
